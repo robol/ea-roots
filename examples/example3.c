@@ -17,19 +17,19 @@ int main(int argc, const char * argv)
   p = malloc(sizeof(double complex) * (degree + 1));
   roots = malloc(sizeof(double complex) * degree);
 
-  for (j = 3; j < 98; j++)
-    p[j] = 0.0;		       
+  for (j = 3; j < degree-2; j++)
+    p[j] = 0.0;
 
   p[0] = -0.25;
   p[1] = 1.0;
   p[2] = -1.0;
 
-  p[98] = 0.25;
-  p[99] = -1.0;
-  p[100] = 1.0;
+  p[degree-2] = 0.25;
+  p[degree-1] = -1.0;
+  p[degree] = 1.0;
 
   ret = ea_roots(p, degree, roots);
-  
+
   printf("Return code: %d\n", ret);
 
   for (j = 0; j < degree; j++)
