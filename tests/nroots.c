@@ -11,6 +11,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 int
 check_nroots(int degree)
@@ -23,6 +24,7 @@ check_nroots(int degree)
   roots = malloc(sizeof(double complex) * degree);
   reference = malloc(sizeof(double complex) * degree);
 
+  memset(p + 1, 0, (degree-1) * sizeof(double complex));
   p[0] = -1.0; p[degree] = 1.0;
   
   ret = ea_roots(p, degree, roots);

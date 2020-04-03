@@ -8,7 +8,7 @@ check: tests
 	./nroots
 
 nroots: nroots.c common.c
-	$(CC) -I.. -o nroots nroots.c $(COMMON_FILES) ../ea-roots.c -lm
+	$(CC) $(CFLAGS) -I.. -o nroots nroots.c $(COMMON_FILES) ../ea-roots.c -lm $(LDFLAGS)
 
 clean:
 	rm -f nroots
